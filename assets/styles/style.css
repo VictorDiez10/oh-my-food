@@ -6,6 +6,63 @@ body {
   margin: 0;
 }
 
+.pre-loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  animation: loader 0.01s;
+  animation-delay: 2s;
+  animation-fill-mode: both;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+.loader {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.loader:after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  margin: auto;
+  background: #222b32;
+  border-radius: 50%;
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  inset: 0px;
+  margin: auto;
+  background: linear-gradient(90deg, #9356DC, #FF79DA);
+  animation: crlMugLoader 2s linear infinite alternate;
+}
+
+@keyframes crlMugLoader {
+  0%, 10% {
+    transform: translateY(64px);
+  }
+  90%, 100% {
+    transform: translateY(0px);
+  }
+}
 .ohmyfood {
   display: flex;
   justify-content: center;
@@ -68,6 +125,11 @@ body {
   text-decoration-line: none;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+}
+.btn-resto button:hover {
+  box-shadow: 0px 4px 15px 0px rgba(53, 53, 53, 0.4901960784);
+  cursor: pointer;
+  filter: brightness(1.1);
 }
 
 .ff {
@@ -137,6 +199,7 @@ div h2 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  padding-bottom: 5rem;
 }
 
 .box {
@@ -146,11 +209,18 @@ div h2 {
   flex-wrap: wrap;
   position: relative;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1019607843);
+  text-decoration: none;
+  color: #000;
+}
+.box:hover {
+  box-shadow: 0px 4px 15px 0px rgba(53, 53, 53, 0.3254901961);
+  cursor: pointer;
 }
 .box img {
   width: 100%;
   height: 180px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 15px 15px 0px 0px;
 }
 
@@ -191,16 +261,44 @@ div h2 {
   margin-top: -15px;
 }
 
-.fa-heart {
+.heart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+}
+.heart .material-icons {
   font-size: 1.375rem;
   align-content: center;
-  padding-right: 1rem;
+  position: absolute;
+  -webkit-background-clip: text;
+          background-clip: text;
+}
+.heart .ga-regular {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+.heart .ga-regular:hover {
+  opacity: 100%;
+  color: #9356DC;
+}
+.heart .ga-solid {
+  cursor: pointer;
+  opacity: 0%;
+  background: linear-gradient(162deg, #ff79da 0%, #9356dc 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 0.3s ease-in-out;
+}
+.heart .ga-solid:hover {
+  opacity: 100%;
 }
 
 footer {
   background-color: #353535;
   color: #FFFFFF;
-  margin-top: 6rem;
 }
 footer p {
   font-weight: 400;
@@ -240,6 +338,4 @@ footer i {
 
 .fa-handshake-angle {
   width: 14px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
