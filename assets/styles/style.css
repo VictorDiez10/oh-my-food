@@ -147,6 +147,7 @@ div h2 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
+  padding: 0 1rem;
 }
 
 .fonctionnement {
@@ -199,7 +200,7 @@ div h2 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
-  padding-bottom: 5rem;
+  padding: 0 1rem 5rem;
 }
 
 .box {
@@ -338,4 +339,40 @@ footer i {
 
 .fa-handshake-angle {
   width: 14px;
+}
+
+@media screen and (min-width: 1440px) {
+  .reservation h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+  div h2 {
+    padding: 1rem 26rem 1rem;
+  }
+  .box-fonctionnement {
+    gap: 43px;
+  }
+  .box-restaurants {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding: 1rem 26rem 1rem;
+    gap: 50px 90px;
+    padding-bottom: 2rem;
+  }
+  .box {
+    width: 490px;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .footer h4 {
+    padding: 0 5rem;
+  }
+  .footer .proposition-partenaire {
+    display: flex;
+    gap: 60px;
+  }
 }/*# sourceMappingURL=style.css.map */

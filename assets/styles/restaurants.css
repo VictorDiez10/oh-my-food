@@ -6,6 +6,14 @@ body {
   margin: 0;
 }
 
+@keyframes itemAppear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .ohmyfood {
   display: flex;
   justify-content: center;
@@ -115,7 +123,12 @@ section {
   box-shadow: 0px 4.01px 15.04px 0px rgba(0, 0, 0, 0.1019607843);
   margin: 1rem;
   border-radius: 15px;
-  padding: 1rem 1rem 0rem 1rem;
+  padding: 0 0 0 1rem;
+  overflow: hidden;
+  animation: itemAppear 0.6s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  transform: scale(0);
 }
 .box p {
   margin: 0 0 0.5rem 0;
@@ -126,15 +139,33 @@ section {
   font-weight: 500;
   font-size: 1.125rem;
 }
+.box .nom-menu {
+  padding: 1rem 0 1rem;
+}
 .box .prix-menu {
   font-size: 0.94rem;
   font-weight: 700;
   display: flex;
   align-items: flex-end;
 }
+.box .prix-menu .check {
+  background-color: #99E2D0;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  height: 100%;
+  align-items: center;
+  margin-right: -50px;
+  margin-left: 20px;
+  transition: all 500ms ease-in-out;
+}
 .box .prix-menu p {
   margin: 0 0 0.5rem 0;
   font-size: 0.94rem;
+}
+.box:hover .prix-menu .check {
+  margin-right: 0;
 }
 
 .plats h2 {
@@ -232,4 +263,10 @@ footer i {
 
 .fa-handshake-angle {
   width: 14px;
+}
+
+@media screen and (min-width: 1440px) {
+  .img img {
+    height: 383px;
+  }
 }/*# sourceMappingURL=restaurants.css.map */

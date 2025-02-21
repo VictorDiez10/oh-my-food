@@ -21,6 +21,15 @@ body {
     margin: 0
 }
 
+@keyframes itemAppear {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
 .ohmyfood {
     @include center;
     padding-top: 14px;
@@ -128,7 +137,12 @@ section {
     box-shadow: 0px 4.01px 15.04px 0px #0000001A;
     margin: 1rem;
     border-radius: 15px;
-    padding: 1rem 1rem 0rem 1rem;
+    padding: 0 0 0 1rem;
+    overflow: hidden;
+    animation: itemAppear .6s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    transform: scale(0);
     p {
         margin: 0 0 0.5rem 0;
         font-weight: 300;
@@ -137,16 +151,39 @@ section {
             font-weight: 500;
             font-size: 1.125rem;
         }
-        
+    }
+
+    .nom-menu {
+        padding: 1rem 0 1rem ;
     }
     .prix-menu {
         font-size: 0.94rem;
         font-weight: 700;
         display: flex;
         align-items: flex-end;
+        .check {
+            background-color: $third;
+            color: #FFF;
+            display: flex;
+            justify-content: center;
+            width: 50px;
+            height: 100%;
+            align-items: center;
+            margin-right: -50px;
+            margin-left: 20px;
+            transition: all 500ms ease-in-out;
+        }
         p {
             margin: 0 0 0.5rem 0;
             font-size: 0.94rem;
+        }
+    }
+
+    &:hover {
+        .prix-menu {
+            .check {
+                margin-right: 0;
+            }
         }
     }
 }
@@ -247,4 +284,12 @@ footer {
 
 .fa-handshake-angle {
     width: 14px;
+}
+
+@media screen and (min-width: 1440px) {
+    .img {
+        img {
+            height: 383px;
+        }
+    }
 }

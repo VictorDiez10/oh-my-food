@@ -44,6 +44,8 @@ body {
     }
 }
 
+
+
 .loader {
     position: relative;
     width: 64px;
@@ -86,7 +88,6 @@ body {
     @include center;
     align-items: center;
     box-shadow: inset 0px 2px 4px 0px #00000026;
-;
     background-color: #EAEAEA;
     gap: 15px;
     color: #353535;
@@ -159,6 +160,7 @@ div {
     @include center;
     flex-wrap: wrap;
     gap: 25px;
+    padding: 0 1rem ;
 }
 
 .fonctionnement { 
@@ -210,7 +212,7 @@ div {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    padding-bottom: 5rem;
+    padding: 0 1rem 5rem ;
 }
 
 .box {
@@ -306,9 +308,6 @@ div {
 }
 
 
-
-
-
 footer {
     background-color: #353535;
     color: #FFFFFF;
@@ -349,4 +348,49 @@ footer {
 
 .fa-handshake-angle {
     width: 14px;
+}
+
+@media screen and (min-width: 1440px) {
+    .reservation {
+        h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+    }
+
+    div {
+        h2 {
+            padding: 1rem 26rem 1rem;
+        }
+    }
+
+    .box-fonctionnement {
+        gap: 43px;
+    }
+
+    .box-restaurants {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        padding: 1rem 26rem 1rem;
+        gap: 50px 90px;
+        padding-bottom: 2rem;
+    }
+
+    .box {
+        width: 490px;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        h4 {
+            padding: 0 5rem;
+        }
+        .proposition-partenaire {
+            display: flex;
+            gap: 60px;
+        }
+    }
 }
