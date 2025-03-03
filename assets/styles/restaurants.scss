@@ -35,6 +35,10 @@ body {
     padding-top: 14px;
     padding-bottom: 7px;
     align-items: center;
+    a {
+        text-decoration: none;
+        color: #000;
+    }
 }
 
 .material-symbols-outlined {
@@ -101,6 +105,7 @@ body {
 
 section {
     background-color: #f6f6f6;
+    padding-bottom: 3rem;
 }
 
 #menu {
@@ -108,7 +113,7 @@ section {
     h2 {
         font-weight: 300;
         font-size: 1rem;
-        margin: 0 1rem 0 1rem;
+        margin: 0 1rem;
     }
 }
 
@@ -143,10 +148,14 @@ section {
     animation-timing-function: ease-in-out;
     animation-fill-mode: both;
     transform: scale(0);
+    cursor: pointer;
     p {
         margin: 0 0 0.5rem 0;
         font-weight: 300;
         font-size: 0.94rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
         &:first-child {
             font-weight: 500;
             font-size: 1.125rem;
@@ -154,13 +163,17 @@ section {
     }
 
     .nom-menu {
-        padding: 1rem 0 1rem ;
+        padding: 1rem 0 0.5rem ;
+        width: calc(100% - 45px);
     }
     .prix-menu {
         font-size: 0.94rem;
         font-weight: 700;
         display: flex;
         align-items: flex-end;
+        .prix {
+            padding-bottom: 0.5rem;
+        }
         .check {
             background-color: $third;
             color: #FFF;
@@ -180,6 +193,9 @@ section {
     }
 
     &:hover {
+        .nom-menu {
+            width: calc(100% - 100px);
+        }
         .prix-menu {
             .check {
                 margin-right: 0;
@@ -221,7 +237,7 @@ section {
 .btn-resto {
     @include center;
     text-decoration: none;
-    margin: 3rem 0 3rem 0;
+    padding-top: 3rem;
     button {
         border: none;
         background: linear-gradient(90deg, #9356DC, #FF79DA);
@@ -263,7 +279,7 @@ footer {
 }
 
 .footer {
-    padding: 1rem 2rem 1rem 2rem;
+    padding: 1rem 2rem;
 }
 
 .proposition {
@@ -290,6 +306,78 @@ footer {
     .img {
         img {
             height: 383px;
+        }
+    }
+
+    .pr {
+        @include center();
+    }
+
+    .nom-resto {
+        width: 65rem;
+        .bandeau {
+            @include center();
+        }
+    }
+
+    #menu {
+        h2 {
+            margin:0 12rem;
+        }
+    }
+
+    section {
+        @include center();
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        padding-bottom: 0;
+    }
+
+    .entree {
+        width: 65rem;
+        background-color: #f6f6f6
+    }
+
+    .plats {
+        width: 65rem;
+        background-color: #f6f6f6
+    }
+
+    .desserts {
+        width: 65rem;
+        background-color: #f6f6f6
+    }
+
+    .box-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 12.7rem;
+        .box {
+            width: 100%;
+        }
+    }
+
+    .btn-resto {
+        padding: 3rem 26.7rem 3rem ;
+        background-color: #f6f6f6;
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        h4 {
+            padding: 0 5rem;
+        }
+        .proposition-partenaire {
+            display: flex;
+            gap: 60px;
         }
     }
 }

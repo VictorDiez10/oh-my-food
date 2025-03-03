@@ -21,6 +21,10 @@ body {
   padding-bottom: 7px;
   align-items: center;
 }
+.ohmyfood a {
+  text-decoration: none;
+  color: #000;
+}
 
 .material-symbols-outlined {
   position: absolute;
@@ -89,6 +93,7 @@ body {
 
 section {
   background-color: #f6f6f6;
+  padding-bottom: 3rem;
 }
 
 #menu {
@@ -97,7 +102,7 @@ section {
 #menu h2 {
   font-weight: 300;
   font-size: 1rem;
-  margin: 0 1rem 0 1rem;
+  margin: 0 1rem;
 }
 
 .entree h2 {
@@ -129,24 +134,32 @@ section {
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
   transform: scale(0);
+  cursor: pointer;
 }
 .box p {
   margin: 0 0 0.5rem 0;
   font-weight: 300;
   font-size: 0.94rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .box p:first-child {
   font-weight: 500;
   font-size: 1.125rem;
 }
 .box .nom-menu {
-  padding: 1rem 0 1rem;
+  padding: 1rem 0 0.5rem;
+  width: calc(100% - 45px);
 }
 .box .prix-menu {
   font-size: 0.94rem;
   font-weight: 700;
   display: flex;
   align-items: flex-end;
+}
+.box .prix-menu .prix {
+  padding-bottom: 0.5rem;
 }
 .box .prix-menu .check {
   background-color: #99E2D0;
@@ -163,6 +176,9 @@ section {
 .box .prix-menu p {
   margin: 0 0 0.5rem 0;
   font-size: 0.94rem;
+}
+.box:hover .nom-menu {
+  width: calc(100% - 100px);
 }
 .box:hover .prix-menu .check {
   margin-right: 0;
@@ -198,7 +214,7 @@ section {
   display: flex;
   justify-content: center;
   text-decoration: none;
-  margin: 3rem 0 3rem 0;
+  padding-top: 3rem;
 }
 .btn-resto button {
   border: none;
@@ -242,7 +258,7 @@ footer i {
 }
 
 .footer {
-  padding: 1rem 2rem 1rem 2rem;
+  padding: 1rem 2rem;
 }
 
 .proposition {
@@ -268,5 +284,68 @@ footer i {
 @media screen and (min-width: 1440px) {
   .img img {
     height: 383px;
+  }
+  .pr {
+    display: flex;
+    justify-content: center;
+  }
+  .nom-resto {
+    width: 65rem;
+  }
+  .nom-resto .bandeau {
+    display: flex;
+    justify-content: center;
+  }
+  #menu h2 {
+    margin: 0 12rem;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding-bottom: 0;
+  }
+  .entree {
+    width: 65rem;
+    background-color: #f6f6f6;
+  }
+  .plats {
+    width: 65rem;
+    background-color: #f6f6f6;
+  }
+  .desserts {
+    width: 65rem;
+    background-color: #f6f6f6;
+  }
+  .box-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 12.7rem;
+  }
+  .box-menu .box {
+    width: 100%;
+  }
+  .btn-resto {
+    padding: 3rem 26.7rem 3rem;
+    background-color: #f6f6f6;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .footer a {
+    text-decoration: none;
+    color: #fff;
+  }
+  .footer h4 {
+    padding: 0 5rem;
+  }
+  .footer .proposition-partenaire {
+    display: flex;
+    gap: 60px;
   }
 }/*# sourceMappingURL=restaurants.css.map */
